@@ -1,6 +1,6 @@
 Name:              devhelp
-Version:           3.30.0
-Release:           3 
+Version:           3.30.1
+Release:           2 
 Summary:           GTK API documentation browser
 
 License:           GPLv2+
@@ -72,5 +72,5 @@ rm -rf ${RPM_BUILD_ROOT}%{_libdir}/gedit/plugins/__pycache__
 
 
 %changelog
-* Sun Dec 1 2019  jiaxiya <jiaxiyajiaxiya@168.com> - 3.30.0-3
+* Sun Dec 1 2019  jiaxiya <jiaxiyajiaxiya@168.com> - 3.30.1-2
 - Package init

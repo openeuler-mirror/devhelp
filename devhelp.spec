@@ -1,7 +1,7 @@
 Name:              devhelp
 Epoch:             1
 Version:           3.30.1
-Release:           2 
+Release:           3
 Summary:           GTK API documentation browser
 
 License:           GPLv2+
@@ -44,7 +44,7 @@ rm -rf ${RPM_BUILD_ROOT}%{_libdir}/gedit/plugins/__pycache__
 
 %find_lang devhelp --with-gnome
 
-%files
+%files -f devhelp.lang
 %doc AUTHORS NEWS README
 %license COPYING
 %{_bindir}/devhelp
@@ -57,21 +57,24 @@ rm -rf ${RPM_BUILD_ROOT}%{_libdir}/gedit/plugins/__pycache__
 %{_datadir}/metainfo/org.gnome.Devhelp.appdata.xml
 %dir %{_libdir}/gedit
 %dir %{_libdir}/gedit/plugins
+%{_libdir}/gedit/plugins/devhelp.*
+%{_libdir}/libdevhelp-3.so.6*
+%{_libdir}/girepository-1.0/Devhelp-3.0.typelib
+%{_datadir}/glib-2.0/schemas/org.gnome.libdevhelp-3.gschema.xml
 
 %files devel
 %{_includedir}/devhelp-3/
-%{_libdir}/libdevhelp-3.so.6*
-%{_libdir}/girepository-1.0/Devhelp-3.0.typelib
 %{_libdir}/libdevhelp-3.so
 %{_libdir}/pkgconfig/*
-%{_datadir}/glib-2.0/schemas/org.gnome.libdevhelp-3.gschema.xml
 %{_datadir}/gir-1.0/Devhelp-3.0.gir
 
 %files help 
 %{_datadir}/gtk-doc/*
 %{_mandir}/man1/devhelp.1*
 
-
 %changelog
+* Tue Dec 31 2019 yanzhihua <yanzhihua4@huawei.com> - 1:3.30.1-3
+- Modify spec
+
 * Sun Dec 1 2019  jiaxiya <jiaxiyajiaxiya@168.com> - 1:3.30.1-2
 - Package init

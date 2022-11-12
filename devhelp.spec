@@ -1,12 +1,11 @@
 Name:              devhelp
 Epoch:             1
-Version:           41.2
-Release:           2
+Version:           41.3
+Release:           1
 Summary:           GTK API documentation browser
 License:           GPLv3+
 URL:               https://wiki.gnome.org/Apps/Devhelp
 Source0:           https://download.gnome.org/sources/%{name}/41/%{name}-%{version}.tar.xz
-Patch0:            fix-meson-0.61.5-compile-error.patch
 
 BuildRequires:     chrpath desktop-file-utils gettext gobject-introspection-devel gtk-doc itstool meson
 BuildRequires:     pkgconfig(amtk-5) pkgconfig(gsettings-desktop-schemas) pkgconfig(gtk+-3.0) pkgconfig(webkit2gtk-4.0)
@@ -81,6 +80,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Devhelp*
 %{_mandir}/man1/devhelp.1*
 
 %changelog
+* Fri Nov 11 2022 lin zhang <lin.zhang@turbolinux.com.cn> - 1:41.3-1
+- Update to 41.3
+
 * Wed Jun 22 2022 wenlong ding <wenlong.ding@turbolinux.com.cn> - 1:41.2-2
 - Add fix-meson-0.61.5-compile-error.patch fix compile error
 

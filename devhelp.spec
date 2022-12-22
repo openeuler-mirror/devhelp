@@ -1,7 +1,7 @@
 Name:              devhelp
 Epoch:             1
 Version:           3.38.1
-Release:           5
+Release:           6
 Summary:           GTK API documentation browser
 
 License:           GPLv2+
@@ -15,8 +15,12 @@ Provides:          %{name}-libs = %{epoch}:%{version}-%{release}
 Obsoletes:         %{name}-libs <= %{epoch}:%{version}-%{release}
 %ifarch x86_64
 Provides: %{name}-libs(x86-64) = %{epoch}:%{version}-%{release}
-%else
+%endif
+%ifarch aarch64
 Provides: %{name}-libs(aarch-64) = %{epoch}:%{version}-%{release}
+%endif
+%ifarch riscv64
+Provides: %{name}-libs(riscv-64) = %{epoch}:%{version}-%{release}
 %endif
 
 %description
@@ -78,6 +82,9 @@ rm -rf ${RPM_BUILD_ROOT}%{_libdir}/gedit/plugins/__pycache__
 %{_mandir}/man1/devhelp.1*
 
 %changelog
+* Tue Jul 26 2022 wangjunqiang <wangjunqiang@iscas.ac.cn> - 1:3.38.1-6
+- Add riscv64 support.
+
 * Tue Mar 1 2022 weijin deng <weijin.deng@turbolinux.com.cn> - 1:3.38.1-5
 - Fix error provides of aarch64.
 
